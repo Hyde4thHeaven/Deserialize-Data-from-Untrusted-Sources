@@ -2,8 +2,8 @@
 
 <div align="center"> <img src="cover.png"/> </div>  
   
-Previously on my episode, we talk about vulnerability in yaml.load(), the one of most famous data-loader functions. Today I will exploiting about **Data deserialization** via **pickle** which provides for efficient binary deserialization and loading of Python datatypes.
-  
+Previously on my episode, we talk about vulnerability in yaml.load(), the one of most famous data-loader functions. Today I will exploiting about **Data deserialization** via **pickle** which provides for efficient binary deserialization and loading of Python datatypes but **inherently risky** if serialized data is tampered with.  
+    
 ## Misuse of pickle  
 **pickle()** is function to dump live Python objects into an octet stream for storage or transmission, then reconstruct them back to possibly another instance of Python.  
   
@@ -18,13 +18,13 @@ The reconstruction step is inherently risky if serialized data is tampered with.
   
 ## Solution
 **DO NOT USE pickle()** to un-pickle the data from an untrusted sources.  
-Try to use [**JSON**](https://docs.python.org/3/library/json.html#module-json) module that does not in itself create an arbitrary code execution vulnerability.
+Try to use **[JSON](https://docs.python.org/3/library/json.html#module-json)** module that does not in itself create an arbitrary code execution vulnerability.
   
 **Another secure function is done!** Secured coding is just a flipped hand when you know the hint!
 
 Let's hunt more vulnerable code to make **Code for Security** next episode. Stay tuned!  
   
-**#Un-pickle #Code4Sec**  
+**#JSON #Code4Sec**  
   
 Credit/Ref:  
 [Nelson Elhage](https://blog.nelhage.com/2011/03/exploiting-pickle/)
